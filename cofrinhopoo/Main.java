@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
+		
+		Cofrinho cofrinho = new Cofrinho();
+	
 		Scanner inputUsuario = new Scanner(System.in);
 		
 		int opcao = inputUsuario.nextInt();
@@ -18,9 +21,8 @@ public class Main {
 			
 			switch(opcao) {
 			
-			case 1:
+			case 1: //Escolhe moeda, valor e a adicione ao cofrinho (classe Cofrinho)
 				escolhaMoeda = 0;
-				
 				while(escolhaMoeda>3 || escolhaMoeda<=0) {
 					Menu.escolhaMoeda();
 					escolhaMoeda = inputUsuario.nextInt();
@@ -28,13 +30,18 @@ public class Main {
 				
 				System.out.println("Qual valor gostaria de adicionar?");
 				escolhaValor = inputUsuario.nextInt();
-				
-				
-				
+				cofrinho.adicionar(escolhaMoeda, escolhaValor);
 				break;
-			case 2:
-				//Logica para remover moeda
-				
+			case 2://Escolhe moeda, valor e a remove do cofrinho (classe Cofrinho)
+				escolhaMoeda = 0;
+				while(escolhaMoeda>3 || escolhaMoeda<=0) {
+					Menu.escolhaRemover();
+					escolhaMoeda = inputUsuario.nextInt();
+				}
+		
+				System.out.println("Qual valor gostaria de remover?");
+				escolhaValor = inputUsuario.nextInt();
+				cofrinho.remover(escolhaMoeda, escolhaValor);
 				break;
 			case 3:
 				//Logica para listar moedas
@@ -48,6 +55,6 @@ public class Main {
 				System.out.println("Opção inválida! Digite o número da opção escolhida!");
 			}
 
+		}
 	}
-
 }
