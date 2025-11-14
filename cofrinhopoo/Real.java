@@ -2,7 +2,7 @@ package cofrinhopoo;
 
 public class Real extends Moeda {
 	public Real() {
-		nome = "Reais";
+		this.nome = "Reais";
 	}
 	
 	public void info() {

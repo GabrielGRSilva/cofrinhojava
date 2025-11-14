@@ -81,10 +81,11 @@ public class Main {
 			case 4://Converte tudo e mostra o valor em reais
 				totalEmReais = 0;
 				
-				for(Moeda moeda: cofrinho.moedas) {
-					totalEmReais += moeda.converter();
+				for(int i = 0; i<=2; i++) {
+					Moeda moedaObj = cofrinho.get(i);
+					totalEmReais += moedaObj.converter();
 				}
-				System.out.printf("Convertendo todas as moedas, você tem um total de %d reais no cofre!", totalEmReais);
+				System.out.printf("Convertendo todas as moedas, você tem um total de %.2f reais no cofre!", totalEmReais);
 				
 				break;
 			case 0:

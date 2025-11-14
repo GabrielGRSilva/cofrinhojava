@@ -2,7 +2,7 @@ package cofrinhopoo;
 
 public class Dolar extends Moeda{
 	public Dolar() {
-		nome = "Dólares";
+		this.nome = "Dólares";
 	}
 	
 	public void info() {

@@ -2,7 +2,7 @@ package cofrinhopoo;
 
 public class Euro extends Moeda {
 	public Euro() {
-		nome = "Euros";
+		this.nome = "Euros";
 	}
 	public void info() {
 		System.out.println("Valor em euros: " + valor);

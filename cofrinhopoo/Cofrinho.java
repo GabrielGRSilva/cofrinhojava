@@ -14,6 +14,10 @@ public class Cofrinho {
 		moedas.add(euro);
 	}
 	
+	public Moeda get(int index) {
+		return moedas.get(index);
+	}
+	
 	public void adicionar(int escolhaMoeda, double escolhaValor) {
 		switch(escolhaMoeda) {
 		
