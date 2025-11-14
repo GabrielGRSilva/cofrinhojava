@@ -15,12 +15,16 @@ public class Main {
 		
 		opcao = -1;
 		System.out.println("Bem-vindo(a) ao Cofrim!");
-		Menu.menu();
 		
 		while(opcao!=0) {
-			
+			Menu.menu();
+			try {
 			opcao = inputUsuario.nextInt();
-			
+			}catch(Exception erro) {
+				System.out.println("Opção inválida! Digite apenas o número da opção escolhida!");
+				inputUsuario.next();
+				continue;
+			}
 			switch(opcao) {
 			
 			case 1: //Escolhe moeda, valor e a adicione ao cofrinho (classe Cofrinho)
@@ -96,7 +100,6 @@ public class Main {
 			default:
 				System.out.println("Opção inválida! Digite o número da opção escolhida!");
 			}
-		Menu.menu();
 		}
 	}
 }
