@@ -10,14 +10,16 @@ public class Main {
 	
 		Scanner inputUsuario = new Scanner(System.in);
 		
-		int opcao = inputUsuario.nextInt();
-		
-		int escolhaMoeda;
+		int opcao, escolhaMoeda;
 		double escolhaValor, totalEmReais;
+		
+		opcao = -1;
+		
+		Menu.menu();
 		
 		while(opcao!=0) {
 			
-			Menu.menu();
+			opcao = inputUsuario.nextInt();
 			
 			switch(opcao) {
 			
