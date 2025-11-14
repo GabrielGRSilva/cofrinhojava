@@ -12,7 +12,6 @@ public class Cofrinho {
 		moedas.add(real);
 		moedas.add(dolar);
 		moedas.add(euro);
-		
 	}
 	
 	public void adicionar(int escolhaMoeda, double escolhaValor) {
@@ -20,16 +19,16 @@ public class Cofrinho {
 		
 		case 1:
 			real.valor += escolhaValor;
-			System.out.printf("Foram adicionados %f reais ao cofrinho!", escolhaValor);
+			System.out.printf("Foram adicionados %.2f reais ao cofrinho!", escolhaValor);
 			break;
 			
 		case 2:
 			dolar.valor += escolhaValor;
-			System.out.printf("Foram adicionados %f dólares ao cofrinho!", escolhaValor);
+			System.out.printf("Foram adicionados %.2f dólares ao cofrinho!", escolhaValor);
 			break;
 		case 3:
 			euro.valor += escolhaValor;
-			System.out.printf("Foram adicionados %f euros ao cofrinho!", escolhaValor);
+			System.out.printf("Foram adicionados %.2f euros ao cofrinho!", escolhaValor);
 			break;
 		default:
 			System.out.println("Opção inválida!");
@@ -42,7 +41,7 @@ public class Cofrinho {
 		case 1:
 			if(real.valor > escolhaValor) {
 				real.valor -= escolhaValor;
-				System.out.printf("Foram removidos %f reais ao cofrinho!", escolhaValor);
+				System.out.printf("Foram removidos %.2f reais ao cofrinho!", escolhaValor);
 			}else {
 				System.out.println("Você não pode remover um valor maior do que tem guardado!");
 			}
@@ -50,7 +49,7 @@ public class Cofrinho {
 		case 2:
 			if(dolar.valor > escolhaValor) {
 				dolar.valor -= escolhaValor;
-				System.out.printf("Foram removidos %f dólares ao cofrinho!", escolhaValor);
+				System.out.printf("Foram removidos %.2f dólares ao cofrinho!", escolhaValor);
 			}else {
 				System.out.println("Você não pode remover um valor maior do que tem guardado!");
 			}
@@ -58,7 +57,7 @@ public class Cofrinho {
 		case 3:
 			if(euro.valor > escolhaValor) {
 				euro.valor -= escolhaValor;
-				System.out.printf("Foram removidos %f euros ao cofrinho!", escolhaValor);
+				System.out.printf("Foram removidos %.2f euros ao cofrinho!", escolhaValor);
 			}else {
 				System.out.println("Você não pode remover um valor maior do que tem guardado!");
 			}

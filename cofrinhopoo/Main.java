@@ -14,7 +14,7 @@ public class Main {
 		double escolhaValor, totalEmReais;
 		
 		opcao = -1;
-		
+		System.out.println("Bem-vindo(a) ao Cofrim!");
 		Menu.menu();
 		
 		while(opcao!=0) {
@@ -29,10 +29,16 @@ public class Main {
 					try {
 						Menu.escolhaMoeda();
 						escolhaMoeda = inputUsuario.nextInt();
-					
-					
+						if(escolhaMoeda!=1 && escolhaMoeda!=2 && escolhaMoeda!=3) {
+							System.out.println("Opção inválida!");
+							break;
+						}
 						System.out.println("Qual valor gostaria de adicionar?");
 						escolhaValor = inputUsuario.nextInt();
+						if(escolhaValor < 0) {
+							System.out.println("Opa! Para remover valores, utilize a opção 2 no menu!");
+							break;
+						}
 						cofrinho.adicionar(escolhaMoeda, escolhaValor);
 					}catch(Exception erro) {
 						System.out.println("Opa, algo deu errado:\n" + erro);
@@ -42,16 +48,23 @@ public class Main {
 			case 2://Escolhe moeda, valor e a remove do cofrinho (classe Cofrinho)
 				escolhaMoeda = 0;
 				try {
-					while(escolhaMoeda>3 || escolhaMoeda<=0) {
+					while(escolhaMoeda > 3 || escolhaMoeda <= 0) {
 						Menu.escolhaRemover();
 						escolhaMoeda = inputUsuario.nextInt();
+						if(escolhaMoeda!=1 && escolhaMoeda!=2 && escolhaMoeda!=3) {
+							System.out.println("Opção inválida!");
+							break;
+						}
 					}
-			
 					System.out.println("Qual valor gostaria de remover?");
 					escolhaValor = inputUsuario.nextInt();
+					if(escolhaValor < 0) {
+						System.out.println("Opa! Digite apenas o valor 'limpo', sem utilizar números negativos!");
+						break;
+					}
 					cofrinho.remover(escolhaMoeda, escolhaValor);
 				}catch(Exception erro) {
-					System.out.println("Opa, algo deu errado:\n" + erro);
+					System.out.println("Opa, algo deu errado! Você digitou o número da opção correta?\n" + erro);
 				}
 				break;
 			case 3://Faz a iteração para mostrar o valor de cada moeda guardada
@@ -76,12 +89,13 @@ public class Main {
 				break;
 			case 0:
 				inputUsuario.close(); //Fecha antes de encerrar para evitar memory leak
-				System.out.println("Obrigado por usar o Cofrinho! Vamos ficar RIIIIIIICOS! $$$");
+				System.out.println("Obrigado por usar o Cofrim! Vamos ficar RIIIIIIICOS! $$$");
 				System.exit(0);
 				break;
 			default:
 				System.out.println("Opção inválida! Digite o número da opção escolhida!");
 			}
+		Menu.menu();
 		}
 	}
 }

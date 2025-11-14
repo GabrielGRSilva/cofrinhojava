@@ -1,7 +1,10 @@
 package cofrinhopoo;
 
 public class Real extends Moeda {
-	public String nome = "Real";
+	public Real() {
+		nome = "Reais";
+	}
+	
 	public void info() {
 		System.out.println("Valor em reais: " + valor);
 	}
