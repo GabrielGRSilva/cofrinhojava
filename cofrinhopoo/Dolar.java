@@ -1,6 +1,7 @@
 package cofrinhopoo;
 
 public class Dolar extends Moeda{
+	public String nome = "Dólar";
 	public void info() {
 		System.out.println("Valor em dólares: " + valor);
 	}
