@@ -68,10 +68,4 @@ public class Cofrinho {
 		}
 	}
 	
-	
-	/*adicionar(Moeda)
-	+remover(Moeda)
-	+listagemMoedas()
-	+totalConvertido()
-	*/
 }

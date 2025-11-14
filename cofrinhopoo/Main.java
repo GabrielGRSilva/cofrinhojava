@@ -13,7 +13,7 @@ public class Main {
 		int opcao = inputUsuario.nextInt();
 		
 		int escolhaMoeda;
-		double escolhaValor;
+		double escolhaValor, totalEmReais;
 		
 		while(opcao!=0) {
 			
@@ -52,7 +52,7 @@ public class Main {
 					System.out.println("Opa, algo deu errado:\n" + erro);
 				}
 				break;
-			case 3:
+			case 3://Faz a iteração para mostrar o valor de cada moeda guardada
 				System.out.println("Aqui estão suas moedas:\n");
 				
 				for(Moeda moeda: cofrinho.moedas) {
@@ -62,17 +62,24 @@ public class Main {
 						System.out.println(moeda.nome + ": " + moeda.valor + "\n");
 					}
 				}
+				break;
+			case 4://Converte tudo e mostra o valor em reais
+				totalEmReais = 0;
 				
+				for(Moeda moeda: cofrinho.moedas) {
+					totalEmReais += moeda.converter();
+				}
+				System.out.printf("Convertendo todas as moedas, você tem um total de %d reais no cofre!", totalEmReais);
 				
 				break;
-			case 4:
-				//Logica para calcular total em reais
-				
+			case 0:
+				inputUsuario.close(); //Fecha antes de encerrar para evitar memory leak
+				System.out.println("Obrigado por usar o Cofrinho! Vamos ficar RIIIIIIICOS! $$$");
+				System.exit(0);
 				break;
 			default:
 				System.out.println("Opção inválida! Digite o número da opção escolhida!");
 			}
-
 		}
 	}
 }

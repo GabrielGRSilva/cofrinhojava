@@ -6,7 +6,7 @@ public class Real extends Moeda {
 		System.out.println("Valor em reais: " + valor);
 	}
 	
-	public void converter() {
-		info();
+	public double converter() {
+		return valor;
 	}
 }

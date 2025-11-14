@@ -6,8 +6,8 @@ public class Euro extends Moeda {
 		System.out.println("Valor em euros: " + valor);
 	}
 	
-	public void converter() {
+	public double converter() {
 		double valorEmReais = valor * 6.15;
-		System.out.println("Valor em reais: " + valorEmReais);
+		return valorEmReais;
 	}
 }
