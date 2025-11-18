@@ -4,15 +4,6 @@ import java.util.ArrayList;
 
 public class Cofrinho {
 	ArrayList<Moeda> moedas = new ArrayList<>();
-/*	Real real = new Real();
-	Dolar dolar = new Dolar();
-	Euro euro = new Euro();
-	
-	public Cofrinho() {
-		moedas.add(real);
-		moedas.add(dolar);
-		moedas.add(euro);
-	}*/
 	
 	public Moeda get(int index) {
 		return moedas.get(index);
@@ -81,6 +72,8 @@ public class Cofrinho {
 				moedas.add(new Euro(1.00));
 				System.out.println("Uma moeda de 1 Euro foi adicionada ao Cofrim!");
 				break;
+			default:
+				System.out.println("Opção inválida!");
 			}
 		}
 	}
@@ -148,6 +141,8 @@ public class Cofrinho {
 				moedas.add(new Euro(1.00));
 				System.out.println("Uma moeda de 1 Euro foi removida do Cofrim!");
 				break;
+			default:
+				System.out.println("Opção inválida!");
 			}
 		}
 	}

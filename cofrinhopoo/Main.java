@@ -1,5 +1,7 @@
 package cofrinhopoo;
 
+//OBS: Terminar de configurar case 3 e 4 e verificar se 1 e 2 precisam de mais alguma alteração
+
 import java.util.Scanner;
 
 public class Main {
