@@ -1,8 +1,9 @@
 package cofrinhopoo;
 
 public class Dolar extends Moeda{
-	public Dolar() {
+	public Dolar(double valor) {
 		this.nome = "Dólares";
+		this.valor = valor;
 	}
 	
 	public void info() {

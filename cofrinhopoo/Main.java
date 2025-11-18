@@ -10,8 +10,8 @@ public class Main {
 	
 		Scanner inputUsuario = new Scanner(System.in);
 		
-		int opcao, escolhaMoeda;
-		double escolhaValor, totalEmReais;
+		int opcao, escolhaMoeda, escolhaValor;
+		double totalEmReais;
 		
 		opcao = -1;
 		System.out.println("Bem-vindo(a) ao Cofrim!");
@@ -37,10 +37,10 @@ public class Main {
 							System.out.println("Opção inválida!");
 							break;
 						}
-						System.out.println("Qual valor gostaria de adicionar?");
+						Menu.escolhaValor();
 						escolhaValor = inputUsuario.nextInt();
-						if(escolhaValor < 0) {
-							System.out.println("Opa! Para remover valores, utilize a opção 2 no menu!");
+						if(escolhaValor <= 0 || escolhaValor > 4) {
+							System.out.println("Opção inválida!");
 							break;
 						}
 						cofrinho.adicionar(escolhaMoeda, escolhaValor);

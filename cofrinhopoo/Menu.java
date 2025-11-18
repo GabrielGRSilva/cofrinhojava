@@ -15,4 +15,9 @@ public class Menu {
 		System.out.println("Qual moeda você quer remover?");
 		System.out.println("1 - Reais\n2 - Dólares\n3 - Euros");
 	}
+	
+	public static void escolhaValor() {
+		System.out.println("Qual o valor da moeda?");
+		System.out.println("1 - 0,10\n2 - 0,25\n3 - 0,50\n4 - 1,00");
+	}
 }

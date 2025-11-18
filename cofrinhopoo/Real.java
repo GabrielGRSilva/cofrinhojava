@@ -1,8 +1,9 @@
 package cofrinhopoo;
 
 public class Real extends Moeda {
-	public Real() {
+	public Real(double valor) {
 		this.nome = "Reais";
+		this.valor = valor;
 	}
 	
 	public void info() {
