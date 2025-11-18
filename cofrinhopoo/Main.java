@@ -3,14 +3,11 @@ package cofrinhopoo;
 //OBS: Terminar de configurar case 3 e 4 e verificar se 1 e 2 precisam de mais alguma alteração
 
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Main {
 
 	public static void main(String[] args) {
-		
 		Cofrinho cofrinho = new Cofrinho();
-	
 		Scanner inputUsuario = new Scanner(System.in);
 		
 		int opcao, escolhaMoeda, escolhaValor;
@@ -87,13 +84,11 @@ public class Main {
 				break;
 			case 4://Converte tudo e mostra o valor em reais
 				totalEmReais = 0;
-				
-				for(int i = 0; i<=2; i++) {
-					Moeda moedaObj = cofrinho.get(i);
-					totalEmReais += moedaObj.converter();
+				while(cofrinho.it.hasNext()) {
+					Moeda moeda = cofrinho.it.next();
+					totalEmReais += moeda.converter();
 				}
 				System.out.printf("Convertendo todas as moedas, você tem um total de %.2f reais no cofre!", totalEmReais);
-				
 				break;
 			case 0:
 				inputUsuario.close(); //Fecha antes de encerrar para evitar memory leak
