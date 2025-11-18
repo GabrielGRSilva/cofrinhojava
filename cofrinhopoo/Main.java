@@ -56,10 +56,10 @@ public class Main {
 				int numMoeda = 1;
 				try {
 					Iterator<Moeda> it = cofrinho.cofrinho.iterator();
-					System.out.println("Estas são suas moedas:");
+					System.out.println("Digite o número da moeda a ser removida:");
 					while(it.hasNext()) {
 						Moeda moeda = it.next();
-						System.out.printf("%d - %s: Moeda de %f", numMoeda, moeda.nome, moeda.valor);
+						System.out.printf("%d - %s: Moeda de %f.2f", numMoeda, moeda.nome, moeda.valor);
 						numMoeda++;
 					}
 					escolhaMoeda = inputUsuario.nextInt();
@@ -79,7 +79,7 @@ public class Main {
 					System.out.println("Estas são suas moedas:");
 					while(it.hasNext()) {
 						Moeda moeda = it.next();
-						System.out.printf("%d - %s: Moeda de %f", numMoeda, moeda.nome, moeda.valor);
+						System.out.printf("%d - %s: Moeda de %.2f\n", numMoeda, moeda.nome, moeda.valor);
 						numMoeda++;
 					}
 				}catch(Exception erro) {
@@ -94,7 +94,7 @@ public class Main {
 						Moeda moeda = it.next();
 						totalEmReais += moeda.converter();
 					}
-					System.out.printf("Convertendo todas as moedas, você tem um total de %.2f reais no cofre!", totalEmReais);
+					System.out.printf("Convertendo todas as moedas, você tem um total de %.2f reais no cofre!\n", totalEmReais);
 				}catch(Exception erro) {
 					System.out.println("Opa, algo deu errado! Você digitou o número da opção correta?\n" + erro);
 				}
