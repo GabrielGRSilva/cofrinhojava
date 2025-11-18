@@ -1,12 +1,9 @@
 package cofrinhopoo;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Cofrinho {
 	ArrayList<Moeda> cofrinho = new ArrayList<>();
-	
-	Iterator<Moeda> it = cofrinho.iterator();
 	
 	public Moeda get(int index) {
 		return cofrinho.get(index);
@@ -36,6 +33,7 @@ public class Cofrinho {
 			default:
 				System.out.println("Opção inválida!");
 			}
+			break;
 		case 2:
 			switch(escolhaValor) {
 			case 1:
@@ -57,6 +55,7 @@ public class Cofrinho {
 			default:
 				System.out.println("Opção inválida!");
 			}
+			break;
 		case 3:
 			switch(escolhaValor) {
 			case 1:

@@ -1,5 +1,7 @@
 package cofrinhopoo;
 
+import java.util.Iterator;
+
 //OBS: Terminar de configurar case 3 e 4 e verificar se 1 e 2 precisam de mais alguma alteração
 
 import java.util.Scanner;
@@ -53,9 +55,10 @@ public class Main {
 				escolhaMoeda = 0;
 				int numMoeda = 1;
 				try {
+					Iterator<Moeda> it = cofrinho.cofrinho.iterator();
 					System.out.println("Estas são suas moedas:");
-					while(cofrinho.it.hasNext()) {
-						Moeda moeda = cofrinho.it.next();
+					while(it.hasNext()) {
+						Moeda moeda = it.next();
 						System.out.printf("%d - %s: Moeda de %f", numMoeda, moeda.nome, moeda.valor);
 						numMoeda++;
 					}
@@ -72,9 +75,10 @@ public class Main {
 			case 3://Faz a iteração para mostrar o valor de cada moeda guardada
 				numMoeda = 1;
 				try {
+					Iterator<Moeda> it = cofrinho.cofrinho.iterator();
 					System.out.println("Estas são suas moedas:");
-					while(cofrinho.it.hasNext()) {
-						Moeda moeda = cofrinho.it.next();
+					while(it.hasNext()) {
+						Moeda moeda = it.next();
 						System.out.printf("%d - %s: Moeda de %f", numMoeda, moeda.nome, moeda.valor);
 						numMoeda++;
 					}
@@ -84,11 +88,16 @@ public class Main {
 				break;
 			case 4://Converte tudo e mostra o valor em reais
 				totalEmReais = 0;
-				while(cofrinho.it.hasNext()) {
-					Moeda moeda = cofrinho.it.next();
-					totalEmReais += moeda.converter();
+				try {
+					Iterator<Moeda> it = cofrinho.cofrinho.iterator();
+					while(it.hasNext()) {
+						Moeda moeda = it.next();
+						totalEmReais += moeda.converter();
+					}
+					System.out.printf("Convertendo todas as moedas, você tem um total de %.2f reais no cofre!", totalEmReais);
+				}catch(Exception erro) {
+					System.out.println("Opa, algo deu errado! Você digitou o número da opção correta?\n" + erro);
 				}
-				System.out.printf("Convertendo todas as moedas, você tem um total de %.2f reais no cofre!", totalEmReais);
 				break;
 			case 0:
 				inputUsuario.close(); //Fecha antes de encerrar para evitar memory leak
