@@ -87,17 +87,8 @@ public class Main {
 				}
 				break;
 			case 4://Converte tudo e mostra o valor em reais
-				totalEmReais = 0;
-				try {
-					Iterator<Moeda> it = cofrinho.cofrinho.iterator();
-					while(it.hasNext()) {
-						Moeda moeda = it.next();
-						totalEmReais += moeda.converter();
-					}
-					System.out.printf("Convertendo todas as moedas, você tem um total de %.2f reais no cofre!\n", totalEmReais);
-				}catch(Exception erro) {
-					System.out.println("Opa, algo deu errado! Você digitou o número da opção correta?\n" + erro);
-				}
+				totalEmReais = cofrinho.converterTudo();
+				System.out.printf("Convertendo todas as moedas, você tem um total de %.2f reais no cofre!\n", totalEmReais);
 				break;
 			case 0:
 				inputUsuario.close(); //Fecha antes de encerrar para evitar memory leak

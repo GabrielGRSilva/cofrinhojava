@@ -1,6 +1,7 @@
 package cofrinhopoo;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Cofrinho {
 	ArrayList<Moeda> cofrinho = new ArrayList<>();
@@ -86,6 +87,21 @@ public class Cofrinho {
 			System.out.println("Moeda removida do Cofrim com sucesso!");
 		}catch(Exception e) {
 			System.out.println("Ocorreu um erro ao remover a moeda!" + e);
+		}
+	}
+	
+	public double converterTudo() {
+		double totalEmReais = 0;
+		try {
+			Iterator<Moeda> it = cofrinho.iterator();
+			while(it.hasNext()) {
+				Moeda moeda = it.next();
+				totalEmReais += moeda.converter();
+			}
+			return totalEmReais;
+		}catch(Exception erro) {
+			System.out.println("Opa, algo deu errado! Você digitou o número da opção correta?\n" + erro);
+			return 0;
 		}
 	}
 }
